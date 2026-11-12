@@ -8,8 +8,19 @@ try {
   console.warn('DNS server override warning:', dnsErr.message);
 }
 
+let isConnecting = false;
+
 const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
+
+  if (isConnecting) {
+    return;
+  }
+
   try {
+    isConnecting = true;
     const mongoUri =
       process.env.MONGODB_URI ||
       process.env.MONGODB_URL ||
@@ -21,7 +32,12 @@ const connectDB = async () => {
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`MongoDB connection error: ${error.message}`);
-    process.exit(1);
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
+    throw error;
+  } finally {
+    isConnecting = false;
   }
 };
 
