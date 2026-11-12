@@ -1,0 +1,179 @@
+.profile-page { padding: 40px 0 60px; }
+
+/* Banner */
+.profile-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.profile-avatar-lg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(46,125,50,0.3);
+}
+
+.profile-banner-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+.profile-banner-info p {
+  color: var(--text-light);
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/* Sections */
+.profile-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-section {
+  padding: 28px 32px;
+}
+
+.profile-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.profile-section-desc {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.profile-subsection {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 16px 0 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.profile-section-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* 3-column form row */
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+/* Skills checkboxes */
+.skills-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.skill-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  background: white;
+}
+.skill-checkbox-label input { display: none; }
+.skill-checkbox-label:hover {
+  border-color: var(--primary-light);
+  background: var(--accent-light);
+}
+.skill-checkbox-label.selected {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.profile-skills-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.profile-skills-preview .text-muted { color: var(--text-muted); font-size: 0.85rem; }
+
+/* Days checkboxes */
+.days-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.day-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  background: white;
+}
+.day-label input { display: none; }
+.day-label:hover { border-color: var(--primary-light); background: var(--accent-light); }
+.day-label.selected {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+/* Password */
+.show-pw-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  .profile-banner { flex-direction: column; text-align: center; padding: 24px 20px; }
+  .profile-section { padding: 20px; }
+  .form-row-3 { grid-template-columns: 1fr; }
+  .profile-avatar-lg { margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+  .skills-checkboxes { gap: 8px; }
+  .skill-checkbox-label { padding: 6px 12px; font-size: 0.82rem; }
+}
+

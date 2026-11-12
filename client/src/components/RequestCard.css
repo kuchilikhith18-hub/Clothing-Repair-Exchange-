@@ -1,0 +1,94 @@
+.request-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.request-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--primary-light);
+}
+
+.request-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.request-card-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.request-card-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.request-card-title-link {
+  text-decoration: none;
+}
+
+.request-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  transition: color var(--transition);
+  line-height: 1.3;
+}
+
+.request-card-title-link:hover .request-card-title {
+  color: var(--primary);
+}
+
+.request-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.request-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.request-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.78rem;
+  background: var(--bg);
+  color: var(--text-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-light);
+}
+
+.request-card-footer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .request-card {
+    padding: 1rem;
+  }
+
+  .request-card-title {
+    font-size: 1rem;
+  }
+}
